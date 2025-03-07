@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Request a Class - EduConnect</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fa fa-graduation-cap me-2"></i>EduConnect
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="classes.html">Classes</a>
+            </li>
+            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="request-class.html" aria-current="page">Request a Class</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="card shadow-sm">
+                <div class="card-body p-4 p-md-5">
+                  <h1 class="card-title text-center mb-5">Request a Custom Class</h1>
+                  
+                  <div class="alert alert-info mb-4">
+                    <h5 class="alert-heading"><i class="fa fa-info-circle me-2"></i>How It Works</h5>
+                    <p class="mb-0">Can't find the class you're looking for? Request a custom class from our qualified teachers. Fill out the form below with your requirements, and we'll match you with the perfect teacher.</p>
+                  </div>
+                  
+                  <form id="classRequestForm">
+                    <h4 class="mb-4">1. Subject Information</h4>
+                    <div class="mb-4">
+                      <label for="subjectArea" class="form-label">Subject Area</label>
+                      <select class="form-select" id="subjectArea" required>
+                        <option value="">Select a subject</option>
+                        <option value="mathematics">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="english">English</option>
+                        <option value="history">History</option>
+                        <option value="programming">Programming</option>
+                        <option value="art">Art</option>
+                        <option value="music">Music</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    
+                    <div class="mb-4" id="otherSubjectDiv" style="display: none;">
+                      <label for="otherSubject" class="form-label">Please specify the subject</label>
+                      <input type="text" class="form-control" id="otherSubject">
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label for="specificTopics" class="form-label">Specific Topics</label>
+                      <input type="text" class="form-control" id="specificTopics" placeholder="e.g., Calculus, Web Development, Creative Writing" required>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label for="learningGoals" class="form-label">Learning Goals</label>
+                      <textarea class="form-control" id="learningGoals" rows="3" placeholder="What do you hope to achieve from this class?" required></textarea>
+                    </div>
+                    
+                    <h4 class="mb-4">2. Class Format</h4>
+                    <div class="mb-4">
+                      <label class="form-label">Preferred Format</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="classFormat" id="formatOneOnOne" value="oneOnOne" checked>
+                        <label class="form-check-label" for="formatOneOnOne">
+                          One-on-One (Private)
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="classFormat" id="formatSmallGroup" value="smallGroup">
+                        <label class="form-check-label" for="formatSmallGroup">
+                          Small Group (2-5 students)
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="classFormat" id="formatLargeGroup" value="largeGroup">
+                        <label class="form-check-label" for="formatLargeGroup">
+                          Large Group (6+ students)
+                        </label>
+                      </div>
+                    </div>
+                    
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <label for="classDuration" class="form-label">Preferred Duration</label>
+                        <select class="form-select" id="classDuration" required>
+                          <option value="1">1 hour</option>
+                          <option value="1.5">1.5 hours</option>
+                          <option value="2">2 hours</option>
+                          <option value="2.5">2.5 hours</option>
+                          <option value="3">3 hours</option>
+                          <option value="custom">Custom</option>
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="classFrequency" class="form-label">Class Frequency</label>
+                        <select class="form-select" id="classFrequency" required>
+                          <option value="once">One-time session</option>
+                          <option value="weekly">Weekly</option>
+                          <option value="biweekly">Bi-weekly</option>
+                          <option value="monthly">Monthly</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <h4 class="mb-4">3. Schedule</h4>
+                    <div class="row mb-4">
+                      <div class="col-md-6">
+                        <label for="startDate" class="form-label">Preferred Start Date</label>
+                        <input type="date" class="form-control" id="startDate" required>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="preferredTime" class="form-label">Preferred Time</label>
+                        <input type="time" class="form-control" id="preferredTime" required>
+                      </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label class="form-label">Preferred Days</label>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="monday" id="dayMonday">
+                            <label class="form-check-label" for="dayMonday">Monday</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="tuesday" id="dayTuesday">
+                            <label class="form-check-label" for="dayTuesday">Tuesday</label>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="wednesday" id="dayWednesday">
+                            <label class="form-check-label" for="dayWednesday">Wednesday</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="thursday" id="dayThursday">
+                            <label class="form-check-label" for="dayThursday">Thursday</label>
+                          </div>
+                        </div>
+                        <div class="col-md-4">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="friday" id="dayFriday">
+                            <label class="form-check-label" for="dayFriday">Friday</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="weekend" id="dayWeekend">
+                            <label class="form-check-label" for="dayWeekend">Weekend</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <h4 class="mb-4">4. Teacher Preferences</h4>
+                    <div class="mb-4">
+                      <label for="teacherPreference" class="form-label">Do you have a specific teacher in mind?</label>
+                      <select class="form-select" id="teacherPreference" required>
+                        <option value="no">No, match me with any qualified teacher</option>
+                        <option value="yes">Yes, I have a specific teacher in mind</option>
+                      </select>
+                    </div>
+                    
+                    <div class="mb-4" id="specificTeacherDiv" style="display: none;">
+                      <label for="specificTeacher" class="form-label">Teacher Name</label>
+                      <input type="text" class="form-control" id="specificTeacher" placeholder="Enter teacher's name">
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label for="teacherQualifications" class="form-label">Preferred Teacher Qualifications</label>
+                      <textarea class="form-control" id="teacherQualifications" rows="2" placeholder="Any specific qualifications or experience you're looking for"></textarea>
+                    </div>
+                    
+                    <h4 class="mb-4">5. Additional Information</h4>
+                    <div class="mb-4">
+                      <label for="currentLevel" class="form-label">Your Current Level</label>
+                      <select class="form-select" id="currentLevel" required>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                      </select>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label for="additionalInfo" class="form-label">Additional Information</label>
+                      <textarea class="form-control" id="additionalInfo" rows="3" placeholder="Any other details that might help us find the right teacher for you"></textarea>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <label for="budgetRange" class="form-label">Budget Range (per hour)</label>
+                      <select class="form-select" id="budgetRange" required>
+                        <option value="">Select your budget range</option>
+                        <option value="under15">Under $15</option>
+                        <option value="15-25">$15 - $25</option>
+                        <option value="25-50">$25 - $50</option>
+                        <option value="50-100">$50 - $100</option>
+                        <option value="over100">Over $100</option>
+                      </select>
+                    </div>
+                    
+                    <div class="mb-4 form-check">
+                      <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                      <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                      <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fa fa-graduation-cap me-2"></i>EduConnect</h5>
+            <p>Connecting teachers and students for a better learning experience.</p>
+          </div>
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-white">Home</a></li>
+              <li><a href="classes.html" class="text-white">Classes</a></li>
+              
+              <li><a href="request-class.html" class="text-white">Request a Class</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Support</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Help Center</a></li>
+              <li><a href="#" class="text-white">Contact Us</a></li>
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Connect With Us</h5>
+            <div class="d-flex gap-3 social-icons">
+              <a href="#" class="text-white"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-linkedin fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 EduConnect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" required>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none">Forgot password?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Register as a Student</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="registerName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="registerName" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="registerEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registerPassword" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Interested Subjects</label>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="mathematics" id="mathSubject">
+                      <label class="form-check-label" for="mathSubject">Mathematics</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="science" id="scienceSubject">
+                      <label class="form-check-label" for="scienceSubject">Science</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="english" id="englishSubject">
+                      <label class="form-check-label" for="englishSubject">English</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="history" id="historySubject">
+                      <label class="form-check-label" for="historySubject">History</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="programming" id="programmingSubject">
+                      <label class="form-check-label" for="programmingSubject">Programming</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="art" id="artSubject">
+                      <label class="form-check-label" for="artSubject">Art</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

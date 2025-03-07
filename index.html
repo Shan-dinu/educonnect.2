@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EduConnect - Teaching & Learning Platform</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <i class="fa fa-graduation-cap me-2"></i>EduConnect
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="classes.html">Classes</a>
+            </li>
+            
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="request-class.html">Request a Class</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <button class="btn btn-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
+            <button class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#registerModal">Register</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero-section text-center py-5">
+        <div class="container">
+          <h1 class="display-4 fw-bold mb-4">Connect with Teachers & Learn Anything</h1>
+          <p class="lead mb-4">
+            EduConnect brings together students and teachers in an interactive online learning environment.
+            Find classes in your favorite subjects or request custom lessons from qualified teachers.
+          </p>
+          <div class="d-flex justify-content-center gap-3">
+            <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#registerModal">
+              Join as Student
+            </button>
+            <button class="btn btn-outline-primary btn-lg" data-bs-toggle="modal" data-bs-target="#teacherRegisterModal">
+              Become a Teacher
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- How It Works Section -->
+      <section class="how-it-works py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">How It Works</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                  <div class="feature-icon bg-primary text-white mb-3">
+                    <i class="fa fa-user-plus fa-2x"></i>
+                  </div>
+                  <h3 class="card-title h5">Create an Account</h3>
+                  <p class="card-text">
+                    Sign up as a student to find classes or as a teacher to offer your expertise.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                  <div class="feature-icon bg-primary text-white mb-3">
+                    <i class="fa fa-search fa-2x"></i>
+                  </div>
+                  <h3 class="card-title h5">Find or Create Classes</h3>
+                  <p class="card-text">
+                    Browse available classes or create your own if you're a qualified teacher.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                  <div class="feature-icon bg-primary text-white mb-3">
+                    <i class="fa fa-graduation-cap fa-2x"></i>
+                  </div>
+                  <h3 class="card-title h5">Learn & Grow</h3>
+                  <p class="card-text">
+                    Join classes, interact with teachers, and expand your knowledge.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Classes Section -->
+      <section class="featured-classes py-5">
+        <div class="container">
+          <h2 class="text-center mb-5">Featured Classes</h2>
+          <div class="row g-4" id="featuredClasses">
+            <!-- Classes will be loaded from script.js -->
+          </div>
+          <div class="text-center mt-4">
+            <a href="classes.html" class="btn btn-outline-primary">View All Classes</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-5">What Our Users Say</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="testimonial-avatar me-3">
+                      <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Student" class="rounded-circle" width="60" height="60">
+                    </div>
+                    <div>
+                      <h5 class="mb-0">Sarah Johnson</h5>
+                      <p class="text-muted mb-0">Student</p>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    "I found an amazing math teacher on EduConnect who helped me prepare for my exams. The platform is so easy to use!"
+                  </p>
+                  <div class="text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="testimonial-avatar me-3">
+                      <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Teacher" class="rounded-circle" width="60" height="60">
+                    </div>
+                    <div>
+                      <h5 class="mb-0">David Chen</h5>
+                      <p class="text-muted mb-0">Teacher</p>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    "As a teacher, EduConnect has given me the opportunity to share my knowledge with students from around the world."
+                  </p>
+                  <div class="text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="testimonial-avatar me-3">
+                      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Parent" class="rounded-circle" width="60" height="60">
+                    </div>
+                    <div>
+                      <h5 class="mb-0">Lisa Rodriguez</h5>
+                      <p class="text-muted mb-0">Parent</p>
+                    </div>
+                  </div>
+                  <p class="card-text">
+                    "My daughter needed help with science, and we found the perfect tutor on EduConnect. The request class feature is fantastic!"
+                  </p>
+                  <div class="text-warning">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <h5><i class="fa fa-graduation-cap me-2"></i>EduConnect</h5>
+            <p>Connecting teachers and students for a better learning experience.</p>
+          </div>
+          <div class="col-md-2 mb-4 mb-md-0">
+            <h5>Links</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Home</a></li>
+              <li><a href="classes.html" class="text-white">Classes</a></li>
+              
+              <li><a href="request-class.html" class="text-white">Request a Class</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4 mb-md-0">
+            <h5>Support</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Help Center</a></li>
+              <li><a href="#" class="text-white">Contact Us</a></li>
+              <li><a href="#" class="text-white">Privacy Policy</a></li>
+              <li><a href="#" class="text-white">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5>Connect With Us</h5>
+            <div class="d-flex gap-3 social-icons">
+              <a href="#" class="text-white"><i class="fa fa-facebook fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-twitter fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-instagram fa-lg"></i></a>
+              <a href="#" class="text-white"><i class="fa fa-linkedin fa-lg"></i></a>
+            </div>
+            <div class="mt-3">
+              <p class="mb-0">Subscribe to our newsletter:</p>
+              <div class="input-group mt-2">
+                <input type="email" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+          <p class="mb-0">&copy; 2025 EduConnect. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login to Your Account</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="loginForm">
+              <div class="mb-3">
+                <label for="loginEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="loginEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="loginPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="loginPassword" required>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Login</button>
+              </div>
+              <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none">Forgot password?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registerModalLabel">Register as a Student</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="registerForm">
+              <div class="mb-3">
+                <label for="registerName" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="registerName" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="registerEmail" required>
+              </div>
+              <div class="mb-3">
+                <label for="registerPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" id="registerPassword" required>
+              </div>
+              <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" id="confirmPassword" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Interested Subjects</label>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="mathematics" id="mathSubject">
+                      <label class="form-check-label" for="mathSubject">Mathematics</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="science" id="scienceSubject">
+                      <label class="form-check-label" for="scienceSubject">Science</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="english" id="englishSubject">
+                      <label class="form-check-label" for="englishSubject">English</label>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="history" id="historySubject">
+                      <label class="form-check-label" for="historySubject">History</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="programming" id="programmingSubject">
+                      <label class="form-check-label" for="programmingSubject">Programming</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="art" id="artSubject">
+                      <label class="form-check-label" for="artSubject">Art</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                <label class="form-check-label" for="termsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teacher Register Modal -->
+    <div class="modal fade" id="teacherRegisterModal" tabindex="-1" aria-labelledby="teacherRegisterModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="teacherRegisterModalLabel">Register as a Teacher</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="teacherRegisterForm">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="teacherName" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="teacherName" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teacherEmail" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="teacherEmail" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teacherPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="teacherPassword" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teacherConfirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="teacherConfirmPassword" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-3">
+                    <label for="teacherQualifications" class="form-label">Qualifications</label>
+                    <textarea class="form-control" id="teacherQualifications" rows="2" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teacherEducation" class="form-label">Educational Background</label>
+                    <textarea class="form-control" id="teacherEducation" rows="2" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teachingExperience" class="form-label">Teaching Experience (years)</label>
+                    <input type="number" class="form-control" id="teachingExperience" min="0" required>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Subjects You Can Teach</label>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="mathematics" id="teachMath">
+                      <label class="form-check-label" for="teachMath">Mathematics</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="physics" id="teachPhysics">
+                      <label class="form-check-label" for="teachPhysics">Physics</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="chemistry" id="teachChemistry">
+                      <label class="form-check-label" for="teachChemistry">Chemistry</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="biology" id="teachBiology">
+                      <label class="form-check-label" for="teachBiology">Biology</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="english" id="teachEnglish">
+                      <label class="form-check-label" for="teachEnglish">English</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="history" id="teachHistory">
+                      <label class="form-check-label" for="teachHistory">History</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="programming" id="teachProgramming">
+                      <label class="form-check-label" for="teachProgramming">Programming</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="art" id="teachArt">
+                      <label class="form-check-label" for="teachArt">Art</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="music" id="teachMusic">
+                      <label class="form-check-label" for="teachMusic">Music</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="teacherBio" class="form-label">Brief Bio</label>
+                <textarea class="form-control" id="teacherBio" rows="3" required></textarea>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="teacherTermsCheck" required>
+                <label class="form-check-label" for="teacherTermsCheck">I agree to the <a href="#">Terms and Conditions</a></label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Register as Teacher</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
